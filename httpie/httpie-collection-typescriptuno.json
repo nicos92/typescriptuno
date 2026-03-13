@@ -1,0 +1,485 @@
+{
+  "meta": {
+    "format": "httpie",
+    "version": "1.0.0",
+    "contentType": "collection",
+    "schema": "https://schema.httpie.io/1.0.0.json",
+    "docs": "https://httpie.io/r/help/export-from-httpie",
+    "source": "HTTPie Desktop 2025.2.0"
+  },
+  "entry": {
+    "name": "typescriptuno",
+    "icon": {
+      "color": "blue",
+      "name": "hammer"
+    },
+    "auth": {
+      "type": "none"
+    },
+    "requests": [
+      {
+        "name": "{{local}}/auth/login",
+        "url": "{{local}}/auth/login",
+        "method": "POST",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "inherited"
+        },
+        "body": {
+          "type": "text",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/users",
+        "url": "{{local}}/users",
+        "method": "POST",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "text",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "{\n  \"username\":\"nicolas5\",\n  \"password\":\"123456\",\n  \"rol\":\"encargado\"\n}",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/users/:id",
+        "url": "{{local}}/users/:id",
+        "method": "DELETE",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "2",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "{\n  \"username\":\"salomon\"\n}",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/users/:id",
+        "url": "{{local}}/users/:id",
+        "method": "PATCH",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "2",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "text",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "{\n  \"username\":\"salomon\"\n}",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/users/:id",
+        "url": "{{local}}/users/:id",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "2",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/users",
+        "url": "{{local}}/users",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/tasks/:id",
+        "url": "{{local}}/tasks/:id",
+        "method": "DELETE",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "1",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/tasks/:id",
+        "url": "{{local}}/tasks/:id",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "1",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/tasks/:id/complete",
+        "url": "{{local}}/tasks/:id/complete",
+        "method": "PATCH",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [
+          {
+            "name": "id",
+            "value": "2",
+            "enabled": true
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/tasks",
+        "url": "{{local}}/tasks",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "{{local}}/tasks",
+        "url": "{{local}}/tasks",
+        "method": "POST",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "bearer",
+          "target": "headers",
+          "credentials": {
+            "username": "",
+            "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzczNDEzNDA3LCJleHAiOjE3NzM0NTY2MDd9.j4Fd4JQmQl0jxAUjrBv0BKb2uzFdofoBr55l56GwJwM"
+          }
+        },
+        "body": {
+          "type": "text",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "{\n  \"title\":\"una tarea\"\n}",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "",
+        "url": "",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "inherited"
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "",
+        "url": "",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "inherited"
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      }
+    ]
+  }
+}
