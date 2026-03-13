@@ -219,16 +219,16 @@ pnpm add -D @types/jsonwebtoken @types/bcryptjs
 3. Agregar rutas de users en server.ts ✔
 
 ### Fase 4: Soft Delete en Task
-1. Agregar `deletedAt` a `task.schema.ts`
-2. Agregar `userId` a `task.schema.ts`
-3. Actualizar `task.repository.ts` (interfaz)
-4. Actualizar `typeorm-task.repository.ts`
-5. Actualizar entity `task.ts`
+1. Agregar `deletedAt` a `task.schema.ts` ✔
+2. Agregar `userId` a `task.schema.ts` ✔
+3. Actualizar `task.repository.ts` (interfaz) ✔
+4. Actualizar `typeorm-task.repository.ts` ✔
+5. Actualizar entity `task.ts` ✔
 
 ### Fase 5: Tasks con Auth
-1. Actualizar use cases de task
-2. Actualizar controller de task
-3. Proteger rutas con middleware
+1. Actualizar use cases de task ✔
+2. Actualizar controller de task ✔
+3. Proteger rutas con middleware ✔
 
 ---
 
