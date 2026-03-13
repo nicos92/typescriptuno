@@ -7,7 +7,14 @@ export class GetTaskUseCase {
         this.repository = repository
     }
 
-    async execute(){
+    async execute(id?: number){
+        if (id) {
+            const task = await this.repository.findById(id)
+            if (!task) {
+                throw new Error("Tarea no encontrada")
+            }
+            return task
+        }
         return await this.repository.findAll()
     }
 }

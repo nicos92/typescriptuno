@@ -4,6 +4,7 @@ import { GetTaskUseCase } from "../domain/use-cases/task/get-task.use-case";
 import { CreateTaskUseCase } from "../domain/use-cases/task/create-task.use-case";
 import { CompleteTaskUseCase } from "../domain/use-cases/task/complete-task.use-case";
 import { DeleteTaskUseCase } from "../domain/use-cases/task/delete-task.use-case";
+import { AuthRequest } from "../middleware/auth.middleware";
 
 export class TaskController {
 
@@ -21,40 +22,71 @@ export class TaskController {
         this.deleteTaskUseCase = new DeleteTaskUseCase(repository)
     }
 
-    async getAll(req: Request, res: Response) {
+    async getAll(req: AuthRequest, res: Response) {
         try {
-            const tasks = await this.getTaskUseCase.execute();
-            res.json(tasks);
+            const tasks = await this.getTaskUseCase.execute() as any[];
+            res.json(tasks.map(task => ({
+                id: task.getId(),
+                title: task.getTitle(),
+                completed: task.isCompleted(),
+                userId: task.getUserId()
+            })));
         } catch (error: any) {
             res.status(500).json({ message: error.message });
         }
     }
 
-    async create(req: Request, res: Response) {
+    async getById(req: AuthRequest, res: Response) {
+        try {
+            const id = parseInt(req.params.id);
+            const task = await this.getTaskUseCase.execute(id) as any;
+            res.json({
+                id: task.getId(),
+                title: task.getTitle(),
+                completed: task.isCompleted(),
+                userId: task.getUserId()
+            });
+        } catch (error: any) {
+            res.status(404).json({ message: error.message });
+        }
+    }
+
+    async create(req: AuthRequest, res: Response) {
         try {
             const { title } = req.body;
-            const task = await this.createTaskUseCase.execute(title);
-            res.status(201).json(task);
+            const userId = req.user!.id;
+            const task = await this.createTaskUseCase.execute(title, userId);
+            res.status(201).json({
+                id: task.getId(),
+                title: task.getTitle(),
+                completed: task.isCompleted(),
+                userId: task.getUserId()
+            });
         } catch (error: any) {
             res.status(400).json({ message: error.message });
         }
     }
 
-    async complete(req: Request, res: Response) {
+    async complete(req: AuthRequest, res: Response) {
         try {
             const id = parseInt(req.params.id);
             const task = await this.completeTaskUseCase.execute(id);
-            res.json(task);
+            res.json({
+                id: task.getId(),
+                title: task.getTitle(),
+                completed: task.isCompleted(),
+                userId: task.getUserId()
+            });
         } catch (error: any) {
             res.status(400).json({ message: error.message });
         }
     }
 
-    async delete(req: Request, res: Response) {
+    async delete(req: AuthRequest, res: Response) {
         try {
             const id = parseInt(req.params.id);
             await this.deleteTaskUseCase.execute(id);
-            res.status(204).send();
+            res.json({ message: "Tarea eliminada" });
         } catch (error: any) {
             res.status(404).json({ message: error.message });
         }

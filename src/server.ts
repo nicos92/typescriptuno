@@ -27,11 +27,12 @@ app.patch("/users/:id", authMiddleware, (req, res) => userController.update(req,
 app.delete("/users/:id", authMiddleware, roleMiddleware(["admin"]), (req, res) => userController.delete(req, res));
 
 app.get("/tasks", authMiddleware, (req, res) => taskController.getAll(req, res));
-app.post("/tasks", authMiddleware, (req, res) => taskController.create(req, res));
-app.patch("/tasks/:id/complete", authMiddleware, (req, res) =>
+app.get("/tasks/:id", authMiddleware, (req, res) => taskController.getById(req, res));
+app.post("/tasks", authMiddleware, roleMiddleware(["admin", "encargado", "operario"]), (req, res) => taskController.create(req, res));
+app.patch("/tasks/:id/complete", authMiddleware, roleMiddleware(["admin", "encargado", "operario"]), (req, res) =>
   taskController.complete(req, res),
 );
-app.delete("/tasks/:id", authMiddleware, (req, res) => taskController.delete(req, res));
+app.delete("/tasks/:id", authMiddleware, roleMiddleware(["admin", "encargado"]), (req, res) => taskController.delete(req, res));
 
 const PORT = 3000;
 
