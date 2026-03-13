@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, DeleteDateColumn } from "typeorm";
 import { UserSchema } from "./user.schema";
 
 @Entity()
@@ -22,6 +22,6 @@ export class TaskSchema {
     @JoinColumn({ name: "userId" })
     user: UserSchema;
 
-    @Column({ type: "datetime", nullable: true })
+    @DeleteDateColumn()
     deletedAt: Date;
 }

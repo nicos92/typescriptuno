@@ -1,11 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class UserSchema {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   username: string;
 
   @Column()
@@ -20,6 +20,6 @@ export class UserSchema {
   @Column({ type: "datetime", nullable: true })
   modifiedAt: Date;
 
-  @Column({ type: "datetime", nullable: true })
+  @DeleteDateColumn()
   deletedAt: Date;
 }

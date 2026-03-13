@@ -41,7 +41,8 @@ export class UserController {
         return res.status(400).json({ message: "Todos los campos son requeridos" });
       }
 
-      const user = await createUserUseCase.execute(username, password, rol);
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const user = await createUserUseCase.execute(username, hashedPassword, rol);
       res.status(201).json({
         id: user.getId(),
         username: user.getUsername(),
