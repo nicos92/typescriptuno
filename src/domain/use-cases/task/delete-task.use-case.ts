@@ -14,6 +14,6 @@ export class DeleteTaskUseCase{
             throw new Error('Tarea no encontrada')
         }
 
-        await this.repository.delete(id)
+        await this.repository.softDelete(id)
     }
 }

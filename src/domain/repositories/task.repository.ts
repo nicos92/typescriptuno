@@ -2,8 +2,9 @@ import { Task } from "../entities/task";
 
 export interface TaskRepository{
     findAll(): Promise<Task[]>
+    findAllByUserId(userId: number): Promise<Task[]>
     findById(id: number): Promise<Task | null>
     create(task: Task): Promise<Task>
     update(task: Task): Promise<Task>
-    delete(id: number): Promise<void>
+    softDelete(id: number): Promise<void>
 }

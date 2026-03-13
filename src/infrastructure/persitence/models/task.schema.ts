@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { UserSchema } from "./user.schema";
 
 @Entity()
 export class TaskSchema {
@@ -13,4 +14,14 @@ export class TaskSchema {
 
     @Column({ type: "datetime", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
+
+    @Column({ nullable: true })
+    userId: number;
+
+    @ManyToOne(() => UserSchema, { nullable: true })
+    @JoinColumn({ name: "userId" })
+    user: UserSchema;
+
+    @Column({ type: "datetime", nullable: true })
+    deletedAt: Date;
 }
