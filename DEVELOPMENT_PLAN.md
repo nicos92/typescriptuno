@@ -206,17 +206,17 @@ pnpm add -D @types/jsonwebtoken @types/bcryptjs
 4. Crear `src/infrastructure/persistence/repositories/typeorm-user.repository.ts` ✔
 
 ### Fase 2: Autenticación JWT
-1. Crear `src/utils/jwt.util.ts`
-2. Crear `src/middleware/auth.middleware.ts`
-3. Crear `src/middleware/role.middleware.ts`
-4. Crear `src/domain/use-cases/user/authenticate.use-case.ts`
-5. Crear `src/controllers/user.controller.ts` (solo auth)
-6. Agregar ruta `/auth/login` en server.ts
+1. Crear `src/utils/jwt.util.ts` ✔
+2. Crear `src/middleware/auth.middleware.ts` ✔
+3. Crear `src/middleware/role.middleware.ts` ✔
+4. Crear `src/domain/use-cases/user/authenticate.use-case.ts` ✔
+5. Crear `src/controllers/user.controller.ts` (solo auth) ✔
+6. Agregar ruta `/auth/login` en server.ts ✔
 
 ### Fase 3: CRUD Users + Auth
-1. Crear use cases de usuario
-2. Completar controller de usuario
-3. Agregar rutas de users en server.ts
+1. Crear use cases de usuario ✔
+2. Completar controller de usuario ✔
+3. Agregar rutas de users en server.ts ✔
 
 ### Fase 4: Soft Delete en Task
 1. Agregar `deletedAt` a `task.schema.ts`
