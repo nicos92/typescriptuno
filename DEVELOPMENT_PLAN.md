@@ -203,7 +203,7 @@ pnpm add -D @types/jsonwebtoken @types/bcryptjs
 1. Crear `src/domain/entities/user.ts` ✔
 2. Crear `src/domain/repositories/user.repository.ts` ✔
 3. Crear `src/infrastructure/persistence/models/user.schema.ts` ✔
-4. Crear `src/infrastructure/persistence/repositories/typeorm-user.repository.ts`
+4. Crear `src/infrastructure/persistence/repositories/typeorm-user.repository.ts` ✔
 
 ### Fase 2: Autenticación JWT
 1. Crear `src/utils/jwt.util.ts`
