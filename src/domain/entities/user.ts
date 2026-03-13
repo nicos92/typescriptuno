@@ -1,15 +1,17 @@
+import { Role, ROLES_VALUES } from "../../types/role"
+
 export class User {
-  private id?: number;
-  private username: string;
-  private password: string;
-  private rol: string;
-  private createdAt: Date;
-  private modifiedAt: Date;
-  private deletedAt: Date | null;
+  private id?: number
+  private username: string
+  private password: string
+  private rol: Role
+  private createdAt: Date
+  private modifiedAt: Date
+  private deletedAt: Date | null
 
   constructor(
     password: string,
-    rol: string,
+    rol: Role,
     username: string,
     createdAt?: Date,
     deletedAt?: Date | null,
@@ -17,13 +19,13 @@ export class User {
     modifiedAt?: Date,
   ) {
     if (!username) {
-      throw new Error("El nombre de usuario es obligatorio");
+      throw new Error("El nombre de usuario es obligatorio")
     }
     if (!password || password.length < 6) {
-      throw new Error("La contraseña debe tener al menos 6 caracteres");
+      throw new Error("La contraseña debe tener al menos 6 caracteres")
     }
-    if (!["admin", "encargado", "operario", "vista"].includes(rol)) {
-      throw new Error("Rol inválido");
+    if (!ROLES_VALUES.includes(rol)) {
+      throw new Error("Rol inválido")
     }
 
     this.id = id;
@@ -47,8 +49,8 @@ export class User {
     return this.password;
   }
 
-  public getRol() {
-    return this.rol;
+  public getRol(): Role {
+    return this.rol
   }
 
   public getCreatedAt() {
